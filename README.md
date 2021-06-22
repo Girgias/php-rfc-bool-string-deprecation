@@ -39,13 +39,17 @@ The following operations will now emit an E_DEPRECATED if a boolean is used:
 
 ## Proposed PHP Version
 
-Next minor version, i.e. PHP 8.1.
+Deprecation: next minor version, i.e. PHP 8.1.
+
+Promotion to TypeError: next major version, i.e. PHP 9.0.
 
 ## Unaffected PHP Functionality
 
  - Manual casting to string will not emit a deprecation diagnostic.
  - String to boolean implicit coercions are not affected.
  - Strict type behaviour is unaffected.
+ - Coercion from bool to int
+ - Coercion from bool to float
 
 ## Future scope
 
