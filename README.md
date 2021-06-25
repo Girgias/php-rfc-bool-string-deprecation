@@ -59,7 +59,6 @@ Promotion to TypeError: next major version, i.e. PHP 9.0.
 
  - Manual casting to string will not emit a deprecation diagnostic.
  - String to boolean implicit coercions are not affected.
- - Strict type behaviour is unaffected.
  - Coercion from bool to int
  - Coercion from bool to float
  - `printf()` family of functions
