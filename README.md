@@ -7,7 +7,7 @@
   * Target Version: PHP 8.1
   * Implementation: https://github.com/php/php-src/pull/9999999
   * First Published at: http://wiki.php.net/rfc/deprecate-boolean-string-coercion
-  * GitHub mirror: https://github.com/Girgias/deprecate-boolean-string-coercion
+  * GitHub mirror: https://github.com/Girgias/php-rfc-bool-string-deprecation
 
 ## Introduction
 
@@ -18,7 +18,16 @@ However, the conversion from boolean to string is asymmetric, as `false` gets co
 
 Emit an `E_DEPRECATED` deprecation diagnostic for implicit coercion of a boolean to a string.
 
+The diagnostic message is:
+
+ > Implicit bool to string coercion is deprecated
+
 Raise this deprecation diagnostic to a TypeError in the next major version (PHP 9.0).
+
+Amending the type signature of the following functions as their usage with a boolean argument
+is common:
+
+ - `ini_set()`
 
 ## Rationale
 
@@ -32,6 +41,9 @@ PHP's boolean conversion to string is also unique, databases will convert `true`
 The following operations will now emit an E_DEPRECATED if a boolean is used:
 
  - Concatenation operator `.`
+ - `echo` language construct
+ - `print` language construct
+ - String interpolation
  - Assignment to a typed property of type `string` in coercive typing mode
  - Argument for a parameter of type `string` for both internal and userland functions in coercive typing mode
  - Returning such a value for userland functions declared with a return type of `string` in coercive typing mode
@@ -39,7 +51,7 @@ The following operations will now emit an E_DEPRECATED if a boolean is used:
 
 ## Proposed PHP Version
 
-Deprecation: next minor version, i.e. PHP 8.1.
+Deprecation and function signature changes: next minor version, i.e. PHP 8.1.
 
 Promotion to TypeError: next major version, i.e. PHP 9.0.
 
@@ -50,6 +62,7 @@ Promotion to TypeError: next major version, i.e. PHP 9.0.
  - Strict type behaviour is unaffected.
  - Coercion from bool to int
  - Coercion from bool to float
+ - `printf()` family of functions
 
 ## Future scope
 
