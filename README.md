@@ -47,7 +47,7 @@ The following operations will now emit an E_DEPRECATED if a boolean is used:
  - Assignment to a typed property of type `string` in coercive typing mode
  - Argument for a parameter of type `string` for both internal and userland functions in coercive typing mode
  - Returning such a value for userland functions declared with a return type of `string` in coercive typing mode
- 
+ - `printf()` family of functions 
 
 ## Proposed PHP Version
 
@@ -62,7 +62,6 @@ Promotion to TypeError: next major version, i.e. PHP 9.0.
  - Strict type behaviour is unaffected.
  - Coercion from bool to int
  - Coercion from bool to float
- - `printf()` family of functions
 
 ## Future scope
 
