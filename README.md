@@ -5,7 +5,7 @@
   * Author: George Peter Banyard <girgias@php.net>, Ilija Tovilo <tovilo.ilija@gmail.com>
   * Status: Under Discussion
   * Target Version: PHP 8.1
-  * Implementation: https://github.com/php/php-src/pull/9999999
+  * Implementation: https://github.com/php/php-src/pull/7199
   * First Published at: http://wiki.php.net/rfc/deprecate-boolean-string-coercion
   * GitHub mirror: https://github.com/Girgias/php-rfc-bool-string-deprecation
 
